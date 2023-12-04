@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace Getnet\PaymentMagento\Gateway\Http\Client\V1\Getpay\Operations;
 
 use Getnet\PaymentMagento\Gateway\Http\Api;
+use Magento\Framework\Exception\LocalizedException;
 use Magento\Payment\Gateway\Http\ClientInterface;
 use Magento\Payment\Gateway\Http\TransferInterface;
 use Magento\Sales\Model\Order;
@@ -91,7 +92,7 @@ class FetchTransactionInfoClient implements ClientInterface
 
         if ($request[self::ORDER_STATE] !== Order::STATE_NEW) {
             // phpcs:ignore Magento2.Exceptions.DirectThrow
-            throw new \InvalidArgumentException('Payment is not New.');
+            throw new LocalizedException(__('Payment is not New.'));
         }
 
         $data = $this->api->sendGetRequest(

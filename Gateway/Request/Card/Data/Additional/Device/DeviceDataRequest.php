@@ -116,7 +116,8 @@ class DeviceDataRequest implements BuilderInterface
 
         $paymentInfo->setAdditionalInformation(
             self::DEVICE_DATA,
-            $result[CardInitSchemaDataRequest::DATA][AdditionalInitSchemaDataRequest::ADDITIONAL_DATA][self::DEVICE_DATA]
+            $result[CardInitSchemaDataRequest::DATA]
+            [AdditionalInitSchemaDataRequest::ADDITIONAL_DATA][self::DEVICE_DATA]
         );
 
         return $result;

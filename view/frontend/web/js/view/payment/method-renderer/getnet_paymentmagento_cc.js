@@ -243,9 +243,8 @@
                     }
 
                     if (!response[0].success) {
-                        self.messageContainer.addErrorMessage({"message": response[0].message.text});
+                        self.messageContainer.addErrorMessage({'message': response[0].message.text});
                     }
-                    
                 }
             ).always(
                 function () {

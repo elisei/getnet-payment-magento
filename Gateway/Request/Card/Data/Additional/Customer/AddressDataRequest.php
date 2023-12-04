@@ -146,7 +146,9 @@ class AddressDataRequest implements BuilderInterface
 
         $billingAddress = $orderAdapter->getBillingAddress();
         if ($billingAddress) {
-            $result[CardInitSchemaDataRequest::DATA][AdditionalInitSchemaDataRequest::ADDITIONAL_DATA][CustomerDataRequest::CUSTOMER][self::BILLING_ADDRESS] = [
+            $result[CardInitSchemaDataRequest::DATA]
+            [AdditionalInitSchemaDataRequest::ADDITIONAL_DATA]
+            [CustomerDataRequest::CUSTOMER][self::BILLING_ADDRESS] = [
                     self::POSTAL_CODE       => $billingAddress->getPostcode(),
                     self::STREET            => $this->config->getValueForAddress($billingAddress, self::STREET),
                     self::NUMBER            => $this->config->getValueForAddress($billingAddress, self::NUMBER),
@@ -161,7 +163,10 @@ class AddressDataRequest implements BuilderInterface
 
         $shippingAddress = $orderAdapter->getShippingAddress();
         if ($shippingAddress) {
-            $result[CardInitSchemaDataRequest::DATA][AdditionalInitSchemaDataRequest::ADDITIONAL_DATA][CustomerDataRequest::CUSTOMER][self::SHIPPING][self::ADDRESS] = [
+            $result[CardInitSchemaDataRequest::DATA]
+            [AdditionalInitSchemaDataRequest::ADDITIONAL_DATA]
+            [CustomerDataRequest::CUSTOMER]
+            [self::SHIPPING][self::ADDRESS] = [
                     self::POSTAL_CODE       => $shippingAddress->getPostcode(),
                     self::STREET            => $this->config->getValueForAddress($shippingAddress, self::STREET),
                     self::NUMBER            => $this->config->getValueForAddress($shippingAddress, self::NUMBER),

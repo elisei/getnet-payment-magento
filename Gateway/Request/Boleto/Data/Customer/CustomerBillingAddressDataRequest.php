@@ -76,6 +76,7 @@ class CustomerBillingAddressDataRequest implements BuilderInterface
 
         $billingAddress = $orderAdapter->getBillingAddress();
         if ($billingAddress) {
+            // phpcs:ignore Generic.Files.LineLength
             $result[BoletoInitSchemaDataRequest::DATA][CustomerDataRequest::CUSTOMER][AddressDataRequest::BILLING_ADDRESS]
             = [
                 // phpcs:ignore Generic.Files.LineLength

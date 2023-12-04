@@ -51,6 +51,8 @@ class AdditionalInitSchemaDataRequest implements BuilderInterface
             throw new InvalidArgumentException(__('Payment data object should be provided'));
         }
 
+        $result = [];
+
         $result[CardInitSchemaDataRequest::DATA][self::ADDITIONAL_DATA] = [];
 
         return $result;

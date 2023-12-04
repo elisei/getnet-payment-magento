@@ -115,7 +115,9 @@ class TaxDocumentDataRequest implements BuilderInterface
         }
 
         if ($typeDocument) {
-            $result[CardInitSchemaDataRequest::DATA][AdditionalInitSchemaDataRequest::ADDITIONAL_DATA][CustomerDataRequest::CUSTOMER] = [
+            $result[CardInitSchemaDataRequest::DATA]
+            [AdditionalInitSchemaDataRequest::ADDITIONAL_DATA]
+            [CustomerDataRequest::CUSTOMER] = [
                     self::TAX_DOCUMENT        => $typeDocument,
                     self::TAX_DOCUMENT_NUMBER => $taxDocument,
                 ];

@@ -55,21 +55,21 @@ class GeneralResponseValidator extends AbstractValidator
         $errorMessages = [];
         if (!$isValid) {
             if (isset($response['status_code'])) {
-                unset($errorCodes);
-                unset($errorMessages);
                 $errorCodes[] = $response['status_code'];
                 $errorMessages[] = __('Payment Erro');
             }
 
             if (isset($response['details'][0]['error_code'])) {
-                unset($errorCodes);
-                unset($errorMessages);
                 foreach ($response['details'] as $message) {
                     if (isset($message['antifraud'])) {
+                        unset($errorCodes);
+                        unset($errorMessages);
                         $errorCodes[] = $message['antifraud']['status_code'];
                         $errorMessages[] = $message['antifraud']['description'];
                     }
                     if (isset($message['error_code'])) {
+                        unset($errorCodes);
+                        unset($errorMessages);
                         $errorCodes[] = $message['error_code'];
                         $errorMessages[] = isset($message['description_detail']) ?: $message['description'];
                     }
